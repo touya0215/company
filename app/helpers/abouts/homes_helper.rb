@@ -1,2 +1,0 @@
-module Abouts::HomesHelper
-end

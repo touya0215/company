@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  namespace :admins do
+    get 'homes/top'
+    get 'homes/about'
+  end
   # devise_for :admins
   # devise_for :customers
   devise_for :customer, controllers: {
@@ -12,10 +16,6 @@ Rails.application.routes.draw do
    # registrations: 'admin/registrations'
   }
   namespace :customers do
-    get 'homes/top'
-    get 'homes/about'
-  end
-  namespace :abouts do
     get 'homes/top'
     get 'homes/about'
   end
