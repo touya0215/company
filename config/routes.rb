@@ -1,5 +1,16 @@
 Rails.application.routes.draw do
   namespace :admins do
+    get 'customers/index'
+    get 'customers/show'
+    get 'customers/edit'
+  end
+  namespace :customers do
+    get 'customers/new'
+    get 'customers/index'
+    get 'customers/show'
+    get 'customers/edit'
+  end
+  namespace :admins do
     get 'homes/top'
     get 'homes/about'
   end
