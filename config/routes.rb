@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :customer do
+    get 'likes/index'
+  end
   namespace :admins do
     get 'customers/index'
     get 'customers/show'
