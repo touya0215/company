@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    get 'posts/new'
+    get 'posts/index'
+    get 'posts/show'
+    get 'posts/edit'
+  end
+  namespace :customer do
+    get 'posts/new'
+    get 'posts/index'
+    get 'posts/show'
+    get 'posts/edit'
+  end
   namespace :customer do
     get 'likes/index'
   end
