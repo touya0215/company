@@ -1,33 +1,18 @@
 Rails.application.routes.draw do
-  namespace :admin do
-    get 'posts/new'
-    get 'posts/index'
-    get 'posts/show'
-    get 'posts/edit'
-  end
-  namespace :customer do
-    get 'posts/new'
-    get 'posts/index'
-    get 'posts/show'
-    get 'posts/edit'
-  end
-  namespace :customer do
+  namespace :customers do
     get 'likes/index'
   end
-  namespace :admins do
-    get 'customers/index'
-    get 'customers/show'
-    get 'customers/edit'
-  end
   namespace :customers do
-    get 'customers/new'
-    get 'customers/index'
-    get 'customers/show'
-    get 'customers/edit'
+    get 'posts/new'
+    get 'posts/index'
+    get 'posts/show'
+    get 'posts/edit'
   end
   namespace :admins do
-    get 'homes/top'
-    get 'homes/about'
+    get 'posts/new'
+    get 'posts/index'
+    get 'posts/show'
+    get 'posts/edit'
   end
   # devise_for :admins
   # devise_for :customers
@@ -42,6 +27,21 @@ Rails.application.routes.draw do
    # registrations: 'admin/registrations'
   }
   namespace :customers do
+    get 'homes/top'
+    get 'homes/about'
+  end
+  namespace :customers do
+    get 'customers/new'
+    get 'customers/index'
+    get 'customers/show'
+    get 'customers/edit'
+  end
+  namespace :admins do
+    get 'customers/index'
+    get 'customers/show'
+    get 'customers/edit'
+  end
+  namespace :admins do
     get 'homes/top'
     get 'homes/about'
   end
