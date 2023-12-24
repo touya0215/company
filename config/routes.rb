@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  root to: "customers/homes#top"
+  get "/", to: 'customers/homes#top', as: :customers_homes_top
+  get "homes/about", to: 'customers/homes#about', as: :customers_homes_about
   namespace :customers do
     get 'likes/index'
   end
@@ -26,10 +30,10 @@ Rails.application.routes.draw do
    # passwords:     'admin/passwords',
    # registrations: 'admin/registrations'
   }
-  namespace :customers do
-    get 'homes/top'
-    get 'homes/about'
-  end
+  # namespace :customers do
+  #   get 'homes/top'
+  #   get 'homes/about'
+  # end
   namespace :customers do
     get 'customers/new'
     get 'customers/index'
