@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: "customers/homes#top"
   get "/", to: 'customers/homes#top', as: :customers_homes_top
   get "homes/about", to: 'customers/homes#about', as: :customers_homes_about
+  get 'search', to: 'customers/homes#search', as: :customers_homes_search
   namespace :customers do
     get 'likes/index'
   end
