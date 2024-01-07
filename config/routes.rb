@@ -4,21 +4,6 @@ Rails.application.routes.draw do
   get "/", to: 'customers/homes#top', as: :customers_homes_top
   get "homes/about", to: 'customers/homes#about', as: :customers_homes_about
   get 'search', to: 'customers/homes#search', as: :customers_homes_search
-  namespace :customers do
-    get 'likes/index'
-  end
-  namespace :customers do
-    get 'posts/new'
-    get 'posts/index'
-    get 'posts/show'
-    get 'posts/edit'
-  end
-  namespace :admins do
-    get 'posts/new'
-    get 'posts/index'
-    get 'posts/show'
-    get 'posts/edit'
-  end
   # devise_for :admins
   # devise_for :customers
   devise_for :customer, controllers: {
@@ -40,6 +25,21 @@ Rails.application.routes.draw do
     get 'customers/index'
     get 'customers/show'
     get 'customers/edit'
+  end
+  namespace :customers do
+    get 'likes/index'
+  end
+  namespace :customers do
+    get 'posts/new'
+    get 'posts/index'
+    get 'posts/show'
+    get 'posts/edit'
+  end
+  namespace :admins do
+    get 'posts/new'
+    get 'posts/index'
+    get 'posts/show'
+    get 'posts/edit'
   end
   namespace :admins do
     get 'customers/index'
