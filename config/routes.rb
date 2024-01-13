@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  namespace :admins do
+    get 'genres/index'
+    get 'genres/edit'
+  end
   root to: "customers/homes#top"
   get "/", to: 'customers/homes#top', as: :customers_homes_top
   get "homes/about", to: 'customers/homes#about', as: :customers_homes_about
