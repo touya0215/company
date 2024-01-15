@@ -132,8 +132,7 @@ GEM
       racc (~> 1.4)
     orm_adapter (0.5.0)
     public_suffix (5.0.4)
-    puma (5.6.7)
-      nio4r (~> 2.0)
+    puma (3.12.6)
     racc (1.7.3)
     rack (2.2.8)
     rack-mini-profiler (2.3.4)
@@ -253,7 +252,7 @@ DEPENDENCIES
   image_processing (~> 1.2)
   jbuilder (~> 2.7)
   listen (~> 3.3)
-  puma (~> 5.0)
+  puma (~> 3.11)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.7, >= 6.1.7.4)
   rails-i18n
