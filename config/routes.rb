@@ -39,20 +39,27 @@ Rails.application.routes.draw do
     get 'posts/show'
     get 'posts/edit'
   end
+    
+  # 下記をまとめる。
   namespace :admins do
-    get 'posts/new'
-    get 'posts/index'
-    get 'posts/show'
-    get 'posts/edit'
+    resources :posts
+    resources :customers
+    resources :homes
   end
-  namespace :admins do
-    get 'customers/index'
-    get 'customers/show'
-    get 'customers/edit'
-  end
-  namespace :admins do
-    get 'homes/top'
-    get 'homes/about'
-  end
+  # namespace :admins do
+  #   get 'posts/new'
+  #   get 'posts/index'
+  #   get 'posts/show'
+  #   get 'posts/edit'
+  # end
+  # namespace :admins do
+  #   get 'customers/index'
+  #   get 'customers/show'
+  #   get 'customers/edit'
+  # end
+  # namespace :admins do
+  #   get 'homes/top'
+  #   get 'homes/about'
+  # end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
