@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  namespace :admins do
-    get 'genres/index'
-    get 'genres/edit'
-  end
   root to: "customers/homes#top"
   get "/", to: 'customers/homes#top', as: :customers_homes_top
   get "homes/about", to: 'customers/homes#about', as: :customers_homes_about
@@ -52,6 +48,7 @@ Rails.application.routes.draw do
     resources :posts
     resources :customers
     resources :homes
+    resources :genres
   end
   # namespace :admins do
   #   get 'posts/new'
@@ -67,6 +64,10 @@ Rails.application.routes.draw do
   # namespace :admins do
   #   get 'homes/top'
   #   get 'homes/about'
+  # end
+  # namespace :admins do
+  #   get 'genres/index'
+  #   get 'genres/edit'
   # end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
