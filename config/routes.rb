@@ -20,12 +20,22 @@ Rails.application.routes.draw do
   #   get 'homes/top'
   #   get 'homes/about'
   # end
-  
+
   # 下記をまとめる。
   scope module: :customers do
-    resources :customers
-    resources :likes
-    resources :posts
+    resources :customers do
+      collection do
+        patch 'out'
+      end
+
+      member do
+        resources :likes
+      end
+    end
+
+    resources :posts do
+      resource :likes, only: [:create, :destroy]
+    end
   end
   # namespace :customers do
   #   get 'customers/new'
@@ -42,7 +52,7 @@ Rails.application.routes.draw do
   #   get 'posts/show'
   #   get 'posts/edit'
   # end
-    
+
   # 下記をまとめる。
   namespace :admins do
     resources :posts
