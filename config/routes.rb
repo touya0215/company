@@ -29,7 +29,7 @@ Rails.application.routes.draw do
       end
 
       member do
-        resources :likes
+        get :likes
       end
     end
 
