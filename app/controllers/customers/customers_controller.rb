@@ -1,4 +1,13 @@
 class Customers::CustomersController < ApplicationController
+
+  before_action :set_customer, only: [:likes]
+
+  def create
+    @customer = Customer.new(customer_params)
+    @customer.save
+    redirect_to customer_path(@customer[:id])
+  end
+  
   def new
   end
 
@@ -12,5 +21,7 @@ class Customers::CustomersController < ApplicationController
   end
 
   def edit
+    @customer = Customer.new
+    @customers = Customer.find(params[:id])
   end
 end
