@@ -7,7 +7,7 @@ class Customers::CustomersController < ApplicationController
     @customer.save
     redirect_to customer_path(@customer[:id])
   end
-  
+
   def new
   end
 
@@ -24,4 +24,18 @@ class Customers::CustomersController < ApplicationController
     @customer = Customer.new
     @customers = Customer.find(params[:id])
   end
+
+
+  private
+
+
+  def customer_params
+    params.require(:customer).permit(:last_name, :first_name, :last_name_kama, :first_name_kana, :telephone_number, :email)
+  end
+
+  def set_customer
+    @customer = Customer.find(params[:id])
+  end
+
+
 end
